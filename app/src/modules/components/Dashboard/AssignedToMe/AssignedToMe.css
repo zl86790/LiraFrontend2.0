@@ -1,0 +1,59 @@
+.asstm-title{
+	color: #fff;
+	background: transparent;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.666666666667;
+    margin: 0;
+    padding: 4px 64px 4px 10px;
+    text-align:left;
+}
+
+.asstm-nav{
+	background-color: #3b73af;
+}
+
+.asstm-nav-bg{
+	background: #eee;
+    -moz-border-radius-topleft: 3px;
+    border-top-left-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-right-radius: 3px;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    margin: 0;
+    min-height: 24px;
+    padding: 0;
+    position: relative;
+}
+
+.asstm-issue-table{
+    background-color: #fff;
+    border-collapse: collapse;
+    width: 100%;
+    text-align:left;
+}
+
+.asstm-issue-table-header tr{
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #e5e5e5;
+	border-left: 1px solid #e5e5e5;
+}
+
+
+.asstm-issue-table-header td{
+	font-size: 12px;
+    vertical-align: middle;
+    padding: 4px 64px 4px 10px;
+}
+
+.asstm-table-title{
+	color: #fff;
+	background: #63adec;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.666666666667;
+    margin: 0;
+    padding: 4px 64px 4px 10px;
+    text-align:left;
+}

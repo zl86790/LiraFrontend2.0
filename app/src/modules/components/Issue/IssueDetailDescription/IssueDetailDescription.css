@@ -1,0 +1,21 @@
+.issueDetailDescriptionDiv{
+	text-align:left;
+	margin-top:70px;
+}
+
+.lira-description-label{
+	float:left;
+	font-weight:bold;
+	width:25%;
+}
+
+.lira-description-content{
+	float:left;
+	font-weight:normal;
+	width:25%;
+}
+.unselectable{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

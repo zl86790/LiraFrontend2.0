@@ -1,0 +1,17 @@
+.create-new-issue-label{
+	float:left;
+	width:30%;
+	text-align:left;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:15px;
+}
+
+.create-new-issue-content{
+	float:left;
+	width:60%;
+	text-align:left;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:15px;
+}

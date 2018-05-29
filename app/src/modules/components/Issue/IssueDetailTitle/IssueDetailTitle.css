@@ -1,0 +1,15 @@
+.issue-detail-breadcrumbs-title{
+	color: #3b73af;
+	text-align: left;
+}
+
+.issue-detail-title{
+    padding: 2px 30px 2px 5px;
+    word-break: break-word;
+    color: #333;
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: normal;
+    text-align: left;
+}
+    
