@@ -1,15 +1,9 @@
-/**
- * 
- */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './IssueDetailTitle.css';
 
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
+import { connect } from 'react-redux';  
 import axios from 'axios';
 import Global from '../../Global/Global.js';
-import store from '../../../App/Store.js';
 import LabelInput from "../../common/LabelInput/LabelInput.js";
 class IssueDetailTitle extends React.Component {
 	
@@ -22,8 +16,8 @@ class IssueDetailTitle extends React.Component {
 		console.log(value);
 		var _this = this;
 		var updateValue = value;
-		var value = value.replace(/(^\s*)|(\s*$)/g,'');
-		if(value!=''){
+		var trimedvalue = value.replace(/(^\s*)|(\s*$)/g,'');
+		if(trimedvalue!==''){
 			axios.post(Global.serverpath+'/api/v1/postlogin/updateIssue', 
 		 			  {
 		 		  			id:_this.props.issue_id,
@@ -48,8 +42,8 @@ class IssueDetailTitle extends React.Component {
 	render() {
 		
 		const {value} = this.props;  
-		if(value._data==undefined){
-			value._data = new Object();
+		if(value._data===undefined){
+			value._data = {};
 		}
 	
 

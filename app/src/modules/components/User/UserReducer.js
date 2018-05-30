@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 //reducer
 export const reducer = (state = {}, action) => {
   switch (action.type) {
     case 'GETUSERDATA': 
-    	state = new Object();
+    	state = {};
     	const assignees = action.payload.length === 0 ? [] : action.payload;
         if (!assignees || assignees.length === 0) {
         	state._data =  '<option value="No data" key="-1">No data</option>'

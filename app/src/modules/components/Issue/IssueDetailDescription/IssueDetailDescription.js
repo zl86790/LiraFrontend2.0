@@ -1,14 +1,8 @@
-/**
- * 
- */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Collapse from 'react-collapse';
 import './IssueDetailDescription.css';
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
+import { connect } from 'react-redux';  
 import axios from 'axios';
-import store from '../../../App/Store.js';
 import Global from '../../Global/Global.js';
 import {SimditorTextarea} from './IssueDescriptionSimditorTextarea.js';
 
@@ -77,8 +71,8 @@ class IssueDetailDescription extends React.Component {
 
 	render() {
 		const {value} = this.props;  
-		if(value._data==undefined){
-			value._data = new Object();
+		if(value._data===undefined){
+			value._data = {};
 		}
 	
 		var openDescription = this.state.openDescription ? true : false;

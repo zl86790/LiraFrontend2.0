@@ -2,8 +2,6 @@
  * 
  */
 import React from 'react';
-import ReactDOM from 'react-dom';
-
 
 import IssuePeople from "../../components/Issue/IssuePeople/IssuePeople.js";
 import IssueDates from "../../components/Issue/IssueDates/IssueDates.js";
@@ -15,23 +13,17 @@ import IssueDetailDetails from "../../components/Issue/IssueDetailDetails/IssueD
 import IssueDetailDescription from "../../components/Issue/IssueDetailDescription/IssueDetailDescription.js";
 import IssueDetailActionsTab from "../../components/Issue/IssueDetailActionsTab/IssueDetailActionsTab.js";
 
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
+import { connect } from 'react-redux';  
 import Global from '../../components/Global/Global.js';
 import store from '../../App/Store.js';
 import axios from 'axios';
 import './IssueDetailPage.css';
 import IssueAddWatcher from '../../components/Issue/IssueWatcher/IssueAddWatcher.js'
 
-
 import { withRouter } from "react-router-dom";
 
-
-
 class IssueDetailPage extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+
 	componentDidMount() {
 		this.getIssueData();
 	}

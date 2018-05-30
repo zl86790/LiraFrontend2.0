@@ -1,15 +1,8 @@
 import 'rc-dialog/assets/bootstrap.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Dialog from 'rc-dialog/lib/DialogWrap.js';
 import Global from '../../Global/Global.js';
-
 import axios from 'axios';
 import { withRouter } from "react-router-dom";
-
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
-import store from '../../../App/Store.js';
 
 class IssueAssignToMe extends React.Component {
 	constructor(props) {
@@ -40,7 +33,7 @@ class IssueAssignToMe extends React.Component {
 		  })
 		  .then(function (response) {
 			  var count = Boolean(response.data);
-			  if(count==true){
+			  if(count===true){
 				  console.log("goto true")
 				  _this.setState({
 			 			showAssign:'none',

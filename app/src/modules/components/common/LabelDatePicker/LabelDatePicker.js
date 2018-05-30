@@ -13,15 +13,16 @@ class LabelDatePicker extends React.Component {
     this.clickLabel = this.clickLabel.bind(this);
     this.blurPicker = this.blurPicker.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.state = {
+    		showLabel:true,
+    		showPicker:'none',
+    		dpvalue: moment(this.props.initValue)
+    };
     
   }
- 
-  componentWillMount(){
-	  this.state = {
-	    		showLabel:true,
-	    		showPicker:'none',
-	    		dpvalue: moment(this.props.initValue)
-	    };
+
+  setFocus(){
+	  document.querySelector('#"+this.props.pickerId+"').focus();
   }
   
   clickLabel(){
@@ -30,7 +31,7 @@ class LabelDatePicker extends React.Component {
 			showPicker:true,
 			dpvalue: moment(this.props.initValue)
 		  });
-	  setTimeout("document.querySelector('#"+this.props.pickerId+"').focus()",1)
+	  setTimeout(this.setFocus(),1)
   }
   
   blurPicker(){

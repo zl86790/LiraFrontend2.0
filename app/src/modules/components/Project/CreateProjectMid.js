@@ -1,15 +1,8 @@
-/**
- * 
- */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Global from '../Global/Global.js';
 import {  withRouter } from "react-router-dom";
-import {ProjectUserLeader,getAllUsers} from '../User/ProjectUser/ProjectUserLeader.js';
 import FetchUsers from '../User/FetchUsers.js';
-
-import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
 class CreateProjectMid extends React.Component {

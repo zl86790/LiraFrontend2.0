@@ -1,8 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
-import Global from '../../Global/Global.js';
-import store from '../../../App/Store.js';
 
 class LabelInput extends React.Component {
 	constructor(props) {
@@ -19,6 +15,10 @@ class LabelInput extends React.Component {
 
 	};
 	
+	setFocus(){
+		document.querySelector('#"+this.props.inputId+"').focus();
+	}
+	
 	clickLabel(){
 		this.setState({
 			showLabel:'none',
@@ -26,17 +26,16 @@ class LabelInput extends React.Component {
 		});
 		document.querySelector("#"+this.props.inputId).value = this.props.initValue;
 		this.oldValue = this.props.initValue;
-		setTimeout("document.querySelector('#"+this.props.inputId+"').focus()",1)
+		setTimeout(this.setFocus(),1)
 	}
 	
 	blurInput(){
-		var _this = this;
 		this.setState({
 			showLabel:true,
 			showInput:'none'
 		});
 		let value = document.querySelector("#"+this.props.inputId).value
-		if(this.oldValue!=value){
+		if(this.oldValue!==value){
 			this.props.callBackFunction(value)
 		}
 		

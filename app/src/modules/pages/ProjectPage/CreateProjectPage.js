@@ -2,10 +2,9 @@
  * 
  */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './CreateProjectPage.css';
 
-import { Provider, connect } from 'react-redux';  
+import { connect } from 'react-redux';  
 import { createStore,combineReducers } from 'redux'
 import store from '../../App/Store.js';
 

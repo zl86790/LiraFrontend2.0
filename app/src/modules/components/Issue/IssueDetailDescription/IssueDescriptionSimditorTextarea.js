@@ -8,9 +8,7 @@ require("simditor/styles/simditor.css");
  */
 
 class SimditorTextarea extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+
     componentDidMount = () => {
         this.initEditor();
     };

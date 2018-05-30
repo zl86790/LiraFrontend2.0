@@ -2,10 +2,7 @@
  * 
  */
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
+import { connect } from 'react-redux';  
 import store from '../../App/Store.js';
 
 import IssueList from '../../components/Issue/IssueList/IssueList.js';
@@ -55,7 +52,6 @@ class IssueListContainer extends React.Component {
 	
 	onSave = () => {
 		  var _this = this;
-		  var qs = require('qs');
 	 	  axios.post(Global.serverpath+'/api/v1/postlogin/issue', 
 	 			  {
 	 		  			project_id:_this.state.project_id,
@@ -95,7 +91,7 @@ class IssueListContainer extends React.Component {
 	fetchData(pageNumber){
 		let url = Global.serverpath+'/api/v1/postlogin/issuesByCondition';
 		let _this = this;
-		if(_this.props==undefined){
+		if(_this.props===undefined){
 			_this.props = {};
 		}
    	 	axios.get(url, {

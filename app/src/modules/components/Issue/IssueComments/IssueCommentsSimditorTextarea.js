@@ -9,9 +9,7 @@ require("simditor/styles/simditor.css");
  */
 
 class SimditorTextarea extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+
     componentDidMount = () => {
         this.initEditor();
         this.editor.setValue("");
@@ -49,9 +47,9 @@ class SimditorTextarea extends React.Component {
 
         this.editor = new Simditor(config);
         this.editor.setValue(this.props.value);
-        this.editor.on("valuechanged", (e, src) => {
-            let html = this.editor.getValue();
-        });
+//        this.editor.on("valuechanged", (e, src) => {
+//            let html = this.editor.getValue();
+//        });
     };
 
     render() {

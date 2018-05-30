@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Global from '../../Global/Global.js';
-import store from '../../../App/Store.js';
 
 class DbSelect extends React.Component {
 	constructor(props) {
@@ -14,7 +12,7 @@ class DbSelect extends React.Component {
 	}
 	
 	componentWillMount() {
-		if(this.props.loadByDb=="true"){
+		if(this.props.loadByDb==="true"){
 			this.loadData();
 		}
 
@@ -42,11 +40,13 @@ class DbSelect extends React.Component {
 	}
 	
 	generateOptions = () => {
-        if(this.state.options==undefined){
-        	this.state.options = [];
+        if(this.state.options===undefined){
+        	this.setState({
+				  options: []
+				});
         }
         let options = [];
-        if(this.props.loadByDb=="true"){
+        if(this.props.loadByDb==="true"){
         	options = this.state.options.length === 0 ? [] : this.state.options;
         }else{
         	options = this.props.options.length === 0 ? [] : this.props.options;

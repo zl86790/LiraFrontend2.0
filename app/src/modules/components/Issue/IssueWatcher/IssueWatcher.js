@@ -1,27 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Tabs, { TabPane } from 'rc-tabs';
-import TabContent from 'rc-tabs/lib/TabContent';
-import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
+import { connect } from 'react-redux';  
 import axios from 'axios';
 import Global from '../../Global/Global.js';
 import store from '../../../App/Store.js';
 
 
-var callback = function(key){
-	 
-}
-
-
-
 class IssueWatchers extends React.Component {
-	
-	constructor(props) {
-		super(props);
-	}
 	
 	componentDidMount() {
 		let url = Global.serverpath+'/api/v1/postlogin/issuewatchers';
@@ -45,7 +30,7 @@ class IssueWatchers extends React.Component {
 	render() {
 
 		const {watchersvalue} = this.props;  
-		if(watchersvalue._watchersdata==undefined){
+		if(watchersvalue._watchersdata===undefined){
 			watchersvalue._watchersdata = [];
 		}
 		

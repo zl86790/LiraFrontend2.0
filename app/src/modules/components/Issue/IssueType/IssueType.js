@@ -3,8 +3,6 @@
  */
 import 'rc-dialog/assets/bootstrap.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Dialog from 'rc-dialog/lib/DialogWrap.js';
 import Global from '../../Global/Global.js';
 import axios from 'axios';
 

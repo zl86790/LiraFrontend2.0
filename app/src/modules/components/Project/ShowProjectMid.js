@@ -1,26 +1,14 @@
-/**
- * 
- */
 import React from 'react';
-import ReactDOM from 'react-dom';
-
 import ReactTable from 'react-table';
 import Global from '../Global/Global.js';
 import { withRouter } from "react-router-dom";
-
 import 'react-table/react-table.css'
-
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
+import { connect } from 'react-redux';  
 import axios from 'axios';
 
 import store from '../../App/Store.js';
 
 class ShowProjectMid extends React.Component {
-	
-	constructor(props) {
-		super(props);
-	}
 	
 	componentWillMount() {
 		let url = Global.serverpath+'/api/v1/postlogin/projects';

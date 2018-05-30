@@ -2,14 +2,11 @@
  * 
  */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Collapse from 'react-collapse';
 import './IssueDates.css';
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
+import { connect } from 'react-redux';  
 import axios from 'axios';
 import Global from '../../Global/Global.js';
-import store from '../../../App/Store.js';
 import LabelDatePicker from "../../common/LabelDatePicker/LabelDatePicker.js";
 import { withRouter } from "react-router-dom";
 
@@ -94,8 +91,8 @@ class IssueDates extends React.Component {
 	render() {
 	
 		const {value} = this.props;
-		if(value._data==undefined){
-			value._data = new Object();
+		if(value._data===undefined){
+			value._data = {};
 		}
 		
 		var openIssueDates = this.state.openIssueDates ? true : false;

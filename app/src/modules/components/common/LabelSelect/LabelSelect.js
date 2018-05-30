@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Global from '../../Global/Global.js';
-import store from '../../../App/Store.js';
 
 class LabelSelect extends React.Component {
 	constructor(props) {
@@ -14,14 +12,9 @@ class LabelSelect extends React.Component {
 			selectDisplay:true,
 			selectEditDisplay:'none'
 		};  
+		
 	}
-	
-	componentWillMount() {
-		if(this.props.loadByDb=="true"){
-			this.loadData();
-		}
 
-	};
 	
 	loadData(){
 		let url = Global.serverpath+'/api/v1/postlogin/sysparameters';
@@ -45,12 +38,10 @@ class LabelSelect extends React.Component {
 	}
 	
 	generateOptions = () => {
-        if(this.state.options==undefined){
-        	this.state.options = [];
-        }
-        let options = [];
-        if(this.props.loadByDb=="true"){
-        	options = this.state.options.length === 0 ? [] : this.state.options;
+		
+		let options = [];
+        if(this.props.loadByDb==="true"){
+        	options = (this.state.options===undefined || this.state.options.length === 0) ? [] : this.state.options;
         }else{
         	options = this.props.options.length === 0 ? [] : this.props.options;
         }
@@ -69,19 +60,23 @@ class LabelSelect extends React.Component {
 			selectDisplay:'none',
 			selectEditDisplay:true
 		});
-		document.querySelector("#"+this.props.selectId).value = this.props.initValue;
-		this.oldValue = document.querySelector("#"+this.props.selectId).value;
+		if(this.props.loadByDb==="true"){
+			this.loadData();
+		}
+		document.querySelector(`#${this.props.selectId}`).value = this.props.initValue;
 		setTimeout("document.querySelector('#"+this.props.selectId+"').focus()",1)
+		this.oldValue = document.querySelector("#"+this.props.selectId).value;
 	}
 	
+
+    
 	blurSelect(){
-		var _this = this;
 		this.setState({
 			selectDisplay:true,
 			selectEditDisplay:'none'
 		});
 		this.newValue = document.querySelector("#"+this.props.selectId).value;
-		if(this.newValue!=this.oldValue){
+		if(this.newValue!==this.oldValue){
 			console.log("changed");
 			this.props.onChagedCallBack();
 		}

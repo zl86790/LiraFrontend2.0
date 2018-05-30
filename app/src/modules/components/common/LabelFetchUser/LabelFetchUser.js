@@ -1,8 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
 import Global from '../../Global/Global.js';
-import store from '../../../App/Store.js';
 import Select from 'react-select';
 import fetch from 'isomorphic-fetch';
 
@@ -19,13 +16,17 @@ class LabelFetchUser extends React.Component {
 			showInput:'none'
 		};  
 	}
+	
+	setFocus(){
+		document.querySelector('#"+this.props.fuId+"').focus();
+	}
  
 	clickLabel(){
 		this.setState({
 			showLabel:'none',
 			showInput:true
 		});
-		setTimeout("document.querySelector('#"+this.props.fuId+"').focus()",1)
+		setTimeout(this.setFocus(),1)
 	}
 	
 	blurInput(){
@@ -50,10 +51,11 @@ class LabelFetchUser extends React.Component {
 		}
 		
 		let url = "";
-		if(this.props.issue_id==undefined || this.props.issue_id==null){
-			url = Global.serverpath+'/api/v1/postlogin/usersStartWith?date='+new Date()+'&'+`startWith=${input}`;
+		let now = new Date();
+		if(this.props.issue_id===undefined || this.props.issue_id===null){
+			url = `${Global.serverpath}/api/v1/postlogin/usersStartWith?date=${now}&startWith=${input}`;
 		}else{
-			url = Global.serverpath+'/api/v1/postlogin/usersStartWith?date='+new Date()+'&issue_id='+this.props.issue_id+'&'+`startWith=${input}`;
+			url = `${Global.serverpath}/api/v1/postlogin/usersStartWith?date=${now}&issue_id=${this.props.issue_id}&startWith=${input}`;
 		}
 		
 		return fetch(url, {

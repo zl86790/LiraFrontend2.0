@@ -1,11 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Tabs, { TabPane } from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
+import { connect } from 'react-redux';  
 import axios from 'axios';
 import store from '../../../App/Store.js';
 
@@ -30,6 +28,7 @@ class IssueDetailActionsTab extends React.Component {
 		this.state = {
 		}; 
 		this.setIssueWatcher = this.setIssueWatcher.bind(this);
+		this.addComment = this.addComment.bind(this);
 	}
 	
 	componentDidMount() {
@@ -104,7 +103,7 @@ class IssueDetailActionsTab extends React.Component {
 			    	<div className="col-7 text-left" style={{paddingTop:15}}>
 			    		<IssueCommentsSimditorTextarea ref="issueCommentsSimditorTextarea"/>
 			    	</div>
-			    	<a id="add-comment" title="Add comment" class="iss-detail-ti-button" href="javascript:void(0);" onClick={this.addComment.bind(this)}>Add</a>
+			    	<a id="add-comment" title="Add comment" className="iss-detail-ti-button" onClick={this.addComment}>Add</a>
 			    </div>
 		)
 	}

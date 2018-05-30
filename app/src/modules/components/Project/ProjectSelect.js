@@ -3,11 +3,9 @@
  */
 import 'rc-dialog/assets/bootstrap.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Dialog from 'rc-dialog/lib/DialogWrap.js';
 import Global from '../Global/Global.js';
 import axios from 'axios';
-import {ProjectUserAssignee,doLogic} from '../User/ProjectUser/ProjectUserAssignee.js';
+import {doLogic} from '../User/ProjectUser/ProjectUserAssignee.js';
 
 class ProjectSelect extends React.Component {
 	

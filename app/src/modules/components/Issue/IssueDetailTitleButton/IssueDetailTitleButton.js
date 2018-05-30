@@ -1,9 +1,4 @@
-/**
- * 
- */
-
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './IssueDetailTitleButton.css';
 class IssueDetailTitleButton extends React.Component {
 	render() {

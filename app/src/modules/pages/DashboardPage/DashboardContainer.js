@@ -1,17 +1,7 @@
-/**
- * 
- */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './DashboardPage.css';
-
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
-import store from '../../App/Store.js';
-
 import AssignedToMeDiv from '../../components/Dashboard/AssignedToMe/AssignedToMe.js';
 import CreatenewIssueButton from '../../components/Dashboard/CreateNewIssueButton/CreateNewIssueButton.js';
-
 import axios from 'axios';
 import Global from '../../components/Global/Global.js';
 
@@ -49,7 +39,6 @@ class DashboardContainer extends React.Component {
 	
 	onSave = () => {
 		  var _this = this;
-		  var qs = require('qs');
 	 	  axios.post(Global.serverpath+'/api/v1/postlogin/issue', 
 	 			  {
 	 		  			project_id:_this.state.project_id,

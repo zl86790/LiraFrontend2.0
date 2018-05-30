@@ -3,11 +3,8 @@
  */
 import 'rc-dialog/assets/bootstrap.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Dialog from 'rc-dialog/lib/DialogWrap.js';
 import Global from '../../Global/Global.js';
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
+import { connect } from 'react-redux';  
 import axios from 'axios';
 import store from '../../../App/Store.js';
 
@@ -48,7 +45,6 @@ ProjectUserAssignee = connect(mapStateToProps, mapDispatchToProps)(ProjectUserAs
 
 const doLogic = function(project_id){
 	let url = Global.serverpath+'/api/v1/postlogin/users';
-	let _this = this;
  	axios.get(url, {
 	    params: {
 	    	project_id:project_id,

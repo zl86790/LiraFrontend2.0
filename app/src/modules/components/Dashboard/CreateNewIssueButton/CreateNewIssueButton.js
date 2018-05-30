@@ -1,18 +1,10 @@
 
 import 'rc-dialog/assets/bootstrap.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Dialog from 'rc-dialog/lib/DialogWrap.js';
-import Global from '../../Global/Global.js';
-import AssignedToMeDiv from '../AssignedToMe/AssignedToMe.js';
-
-import axios from 'axios';
-import store from '../../../App/Store.js';
 import './CreateNewIssueButton.css';
-
 import IssueType from '../../Issue/IssueType/IssueType.js';
 import ProjectSelect from '../../Project/ProjectSelect.js';
-
 import FetchUsers from '../../User/FetchUsers.js';
 import DbSelect from '../../common/Select/DbSelect.js';
 

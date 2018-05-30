@@ -1,12 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import ReactTable from 'react-table';
-import Global from '../../Global/Global.js';
 
 import 'react-table/react-table.css'
 
-import { Provider, connect } from 'react-redux';  
 import { createStore,combineReducers } from 'redux'
 import axios from 'axios';
 

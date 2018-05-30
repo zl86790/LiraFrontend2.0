@@ -1,16 +1,8 @@
-/**
- * 
- */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Collapse from 'react-collapse';
 import './IssueTimeTrack.css';
 
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
-import axios from 'axios';
-import Global from '../../Global/Global.js';
-import store from '../../../App/Store.js';
+import { connect } from 'react-redux';  
 
 class IssueTimeTrack extends React.Component {
 	
@@ -26,8 +18,8 @@ class IssueTimeTrack extends React.Component {
 
 	render() {
 		const {value} = this.props;
-		if(value._data==undefined){
-			value._data = new Object();
+		if(value._data===undefined){
+			value._data = {};
 		}
 		
 		var openIssueTimeTrack = this.state.openIssueTimeTrack ? true : false;
