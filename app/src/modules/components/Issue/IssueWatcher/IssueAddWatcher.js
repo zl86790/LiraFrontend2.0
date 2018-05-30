@@ -17,9 +17,15 @@ class IssueAddWatcher extends React.Component {
 		}; 
 		this.startwatch = this.startwatch.bind(this);
 		this.stopwatch = this.stopwatch.bind(this);
+		this.load = this.load.bind(this);
 	}
 	
-	componentWillMount() {
+	componentDidMount(){
+		this.load();
+	}
+	
+	
+	load() {
 		let url = Global.serverpath+'/api/v1/postlogin/watchstatus';
 		var _this = this;
 		axios.get(url, {

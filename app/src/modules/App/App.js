@@ -16,8 +16,7 @@ import IssueListPage from '../pages/IssueListPage/IssueListPage.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Provider, connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
+import { Provider } from 'react-redux';  
 import store from './Store.js';
 
 import { Switch, BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
@@ -54,6 +53,7 @@ class App extends React.Component {
 					</Switch>
 					</Router>
 					</div>
+					<div id="footerDiv"><Footer /></div>
 				</div>
 				</Provider>
 		)
@@ -82,7 +82,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
     };
     if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
     for (var k in o)
-    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
 }
 

@@ -1,12 +1,5 @@
-/**
- * 
- */
 import React from 'react';
 import './CreateProjectPage.css';
-
-import { connect } from 'react-redux';  
-import { createStore,combineReducers } from 'redux'
-import store from '../../App/Store.js';
 
 import CreateProjectLeft from "../../components/Project/CreateProjectLeft.js";
 import CreateProjectMid from "../../components/Project/CreateProjectMid.js";

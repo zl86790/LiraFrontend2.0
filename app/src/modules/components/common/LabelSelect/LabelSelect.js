@@ -12,9 +12,14 @@ class LabelSelect extends React.Component {
 			selectDisplay:true,
 			selectEditDisplay:'none'
 		};  
-		
 	}
+	
+	componentWillMount() {
+		if(this.props.loadByDb==="true"){
+			this.loadData();
+		}
 
+	};
 	
 	loadData(){
 		let url = Global.serverpath+'/api/v1/postlogin/sysparameters';
@@ -38,10 +43,12 @@ class LabelSelect extends React.Component {
 	}
 	
 	generateOptions = () => {
-		
-		let options = [];
+        if(this.state.options===undefined){
+        	this.state.options = [];
+        }
+        let options = [];
         if(this.props.loadByDb==="true"){
-        	options = (this.state.options===undefined || this.state.options.length === 0) ? [] : this.state.options;
+        	options = this.state.options.length === 0 ? [] : this.state.options;
         }else{
         	options = this.props.options.length === 0 ? [] : this.props.options;
         }
@@ -60,23 +67,19 @@ class LabelSelect extends React.Component {
 			selectDisplay:'none',
 			selectEditDisplay:true
 		});
-		if(this.props.loadByDb==="true"){
-			this.loadData();
-		}
-		document.querySelector(`#${this.props.selectId}`).value = this.props.initValue;
-		setTimeout("document.querySelector('#"+this.props.selectId+"').focus()",1)
+		document.querySelector("#"+this.props.selectId).value = this.props.initValue;
 		this.oldValue = document.querySelector("#"+this.props.selectId).value;
+		setTimeout("document.querySelector('#"+this.props.selectId+"').focus()",1)
 	}
 	
-
-    
 	blurSelect(){
+		var _this = this;
 		this.setState({
 			selectDisplay:true,
 			selectEditDisplay:'none'
 		});
 		this.newValue = document.querySelector("#"+this.props.selectId).value;
-		if(this.newValue!==this.oldValue){
+		if(this.newValue!=this.oldValue){
 			console.log("changed");
 			this.props.onChagedCallBack();
 		}

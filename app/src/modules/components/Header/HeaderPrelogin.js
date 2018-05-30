@@ -1,10 +1,5 @@
-/**
- * 
- */
-
 import './Header.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class HeaderDiv extends React.Component {
 	render() {

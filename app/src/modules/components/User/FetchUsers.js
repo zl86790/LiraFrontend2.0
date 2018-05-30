@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Select from 'react-select';
 import fetch from 'isomorphic-fetch';
 import Global from '../Global/Global.js';
-import axios from 'axios';
 const FetchUsers = createClass({
 	displayName: 'GithubUsers',
 	propTypes: {
@@ -45,15 +44,16 @@ const FetchUsers = createClass({
 		}
 		
 		let url = "";
+		let now = new Date();
 		let project_id = undefined;
 		if(document.getElementById("project_id")!=null){
 			project_id = document.getElementById("project_id").value;
 			console.log(project_id);
 		}
-		if(project_id==undefined || this.props.project_id==null){
-			url = Global.serverpath+'/api/v1/postlogin/usersStartWith?date='+new Date()+'&'+`startWith=${input}`;
+		if(project_id===undefined || this.props.project_id==null){
+			url = `${Global.serverpath}/api/v1/postlogin/usersStartWith?date=${now}&startWith=${input}`;
 		}else{
-			url = Global.serverpath+'/api/v1/postlogin/usersStartWith?date='+new Date()+'&project_id='+project_id+'&'+`startWith=${input}`;
+			url = `${Global.serverpath}/api/v1/postlogin/usersStartWith?date=${now}&issue_id=${this.props.issue_id}&startWith=${input}`;
 		}
 		
 		return fetch(url, {

@@ -4,8 +4,6 @@
 
 import './Header.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
 
 class HeaderDiv extends React.Component {
 	render() {

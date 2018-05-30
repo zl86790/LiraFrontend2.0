@@ -1,17 +1,8 @@
 import React from 'react';
-
 import ReactTable from 'react-table';
-
 import 'react-table/react-table.css'
-
-import { createStore,combineReducers } from 'redux'
-import axios from 'axios';
-
-import store from '../../../App/Store.js';
-
 import 'rc-pagination/assets/index.css';
 import Pagination from 'rc-pagination';
-
 	
 const IssueList = (props) => 
 <div>

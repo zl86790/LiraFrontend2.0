@@ -5,11 +5,6 @@ import Global from '../../Global/Global.js';
 import store from '../../../App/Store.js';
 
 class IssueComments extends React.Component {
-	
-	constructor(props) {
-		super(props);
-	}
-	
 	componentDidMount() {
 		let url = Global.serverpath+'/api/v1/postlogin/comments';
    	 	axios.get(url, {
