@@ -85,7 +85,7 @@ class IssueListContainer extends React.Component {
 		      _this.setState({
 	 	        visible: false,
 	 	      });
-//		      location.reload();
+		      window.location.reload();
 	 	  }).catch(function (error) {
 	 		 alert("create error"+error);
 	 	  });

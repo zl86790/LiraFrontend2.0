@@ -66,7 +66,7 @@ class IssueDetailDescription extends React.Component {
 	 			descriptionEditDisplay:'none'
 	 		  });
 	 		  _this.props.refreshData();
-//		      location.reload();
+		      window.location.reload();
 	 	  }).catch(function (error) {
 	 		 alert("Update error"+error);
 	 	  });
