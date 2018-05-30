@@ -22,7 +22,6 @@ class IssuePeople extends React.Component {
 	
 	changeAssignee(value){
 		var _this = this;
-		console.log(value);
 		var updateValue = value.id;
 		axios.post(Global.serverpath+'/api/v1/postlogin/updateIssue', 
 	 			  {
@@ -44,7 +43,6 @@ class IssuePeople extends React.Component {
 	
 	changeReporter(value){
 		var _this = this;
-		console.log(value);
 		var updateValue = value.id;
 		axios.post(Global.serverpath+'/api/v1/postlogin/updateIssue', 
 	 			  {

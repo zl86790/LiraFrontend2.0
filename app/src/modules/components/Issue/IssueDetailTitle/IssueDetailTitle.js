@@ -13,7 +13,6 @@ class IssueDetailTitle extends React.Component {
 	}
 	
 	blurLabelInput(value){
-		console.log(value);
 		var _this = this;
 		var updateValue = value;
 		var trimedvalue = value.replace(/(^\s*)|(\s*$)/g,'');

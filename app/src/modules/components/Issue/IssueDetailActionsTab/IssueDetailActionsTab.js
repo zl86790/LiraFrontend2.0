@@ -38,8 +38,6 @@ class IssueDetailActionsTab extends React.Component {
 		this.setState({
 			iw:ref
 		});
-		console.log(ref);
-		console.log(this.state);
 	}
 	
 	addComment(event) {

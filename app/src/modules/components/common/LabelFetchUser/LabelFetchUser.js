@@ -17,16 +17,13 @@ class LabelFetchUser extends React.Component {
 		};  
 	}
 	
-	setFocus(){
-		document.querySelector('#"+this.props.fuId+"').focus();
-	}
- 
+
 	clickLabel(){
 		this.setState({
 			showLabel:'none',
 			showInput:true
 		});
-		setTimeout(this.setFocus(),1)
+		setTimeout("document.querySelector('#"+this.props.fuId+"').focus()",1)
 	}
 	
 	blurInput(){

@@ -13,6 +13,7 @@ class LabelDatePicker extends React.Component {
     this.clickLabel = this.clickLabel.bind(this);
     this.blurPicker = this.blurPicker.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.setFocus = this.setFocus.bind(this);
     this.state = {
     		showLabel:true,
     		showPicker:'none',
@@ -22,7 +23,7 @@ class LabelDatePicker extends React.Component {
   }
 
   setFocus(){
-	  document.querySelector('#"+this.props.pickerId+"').focus();
+	  document.querySelector("#"+this.props.pickerId).focus();
   }
   
   clickLabel(){

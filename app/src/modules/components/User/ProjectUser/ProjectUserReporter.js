@@ -58,7 +58,6 @@ const doLogic = function(project_id){
 	    }
 	  })
 	  .then(function (response) {
-		  console.log(response.data);
 		  handleGETUserDATA.payload=response.data;
 		  store.dispatch(handleGETUserDATA);
 	  }).catch(function (error) {

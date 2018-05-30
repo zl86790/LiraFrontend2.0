@@ -37,8 +37,6 @@ class IssueComments extends React.Component {
 //					listItemsHtml += "<div><hr/>"+comments.content+" "+comments.user_name+" "+comments.updated_time_formatted+"</div>";
 //				}
 //        );  
-		console.log(2);
-		console.log(listItemsHtml);
 		return (
 				<div dangerouslySetInnerHTML={createHTML(listItemsHtml)} />
 		)

@@ -58,7 +58,6 @@ const getAllUsers = function(){
 	    }
 	  })
 	  .then(function (response) {
-		  console.log(response.data);
 		  handleGETUserDATA.payload=response.data;
 		  store.dispatch(handleGETUserDATA);
 	  }).catch(function (error) {

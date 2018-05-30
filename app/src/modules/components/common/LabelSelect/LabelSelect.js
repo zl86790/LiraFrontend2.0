@@ -8,6 +8,7 @@ class LabelSelect extends React.Component {
 		this.clickSelect = this.clickSelect.bind(this);
 		this.blurSelect = this.blurSelect.bind(this);
 		this.generateOptions = this.generateOptions.bind(this);
+		this.setFocus = this.setFocus.bind(this);
 		this.state = {
 			selectDisplay:true,
 			selectEditDisplay:'none'
@@ -43,11 +44,10 @@ class LabelSelect extends React.Component {
 	}
 	
 	generateOptions = () => {
-        if(this.state.options===undefined){
-        	this.state.options = [];
-        }
-        let options = [];
-        if(this.props.loadByDb==="true"){
+		let options = [];
+		if(this.state.options===undefined){
+        	options = [];
+        }else if(this.props.loadByDb==="true"){
         	options = this.state.options.length === 0 ? [] : this.state.options;
         }else{
         	options = this.props.options.length === 0 ? [] : this.props.options;
@@ -69,17 +69,20 @@ class LabelSelect extends React.Component {
 		});
 		document.querySelector("#"+this.props.selectId).value = this.props.initValue;
 		this.oldValue = document.querySelector("#"+this.props.selectId).value;
-		setTimeout("document.querySelector('#"+this.props.selectId+"').focus()",1)
+		setTimeout(this.setFocus,1)
 	}
+    
+    setFocus(){
+  	  document.querySelector("#"+this.props.selectId).focus();
+    }
 	
 	blurSelect(){
-		var _this = this;
 		this.setState({
 			selectDisplay:true,
 			selectEditDisplay:'none'
 		});
 		this.newValue = document.querySelector("#"+this.props.selectId).value;
-		if(this.newValue!=this.oldValue){
+		if(this.newValue!==this.oldValue){
 			console.log("changed");
 			this.props.onChagedCallBack();
 		}

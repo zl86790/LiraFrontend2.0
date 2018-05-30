@@ -31,7 +31,6 @@ class IssueDetailDescription extends React.Component {
 			descriptionEditDisplay:true
 		});
 		
-		console.log(this.props);
 		this.refs.descriptionEdit.setDesEditValue(this.props.value._data.description);
 	}
 	cancelEditDescription(){
@@ -65,8 +64,6 @@ class IssueDetailDescription extends React.Component {
 	 		 alert("Update error"+error);
 	 	  });
 		
-		
-		console.log("blurDescription");
 	}
 
 	render() {

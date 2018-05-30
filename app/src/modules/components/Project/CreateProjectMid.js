@@ -14,10 +14,6 @@ class CreateProjectMid extends React.Component {
 		  let projectName = this.refs.projectName.value;
 		  let projectKey = this.refs.projectKey.value;
 		  let projectLeader = this.refs.projectLeader.state.value.id;
-		  console.log(this.refs.projectLeader);
-		  console.log(this.refs.projectLeader.state);
-		  console.log(this.refs.projectLeader.state.value);
-		  console.log(this.refs.projectLeader.state.value.fullName);
 		  let projectType = this.refs.projectType.value;
 		  let projectCategory = this.refs.projectCategory.value;
 		  let projectUrl = this.refs.projectUrl.value;

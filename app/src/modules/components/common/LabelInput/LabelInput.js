@@ -5,6 +5,7 @@ class LabelInput extends React.Component {
 		super(props);
 		this.clickLabel = this.clickLabel.bind(this);
 		this.blurInput = this.blurInput.bind(this);
+		this.setFocus = this.setFocus.bind(this);
 		this.state = {
 			showLabel:true,
 			showInput:'none'
@@ -16,7 +17,7 @@ class LabelInput extends React.Component {
 	};
 	
 	setFocus(){
-		document.querySelector('#"+this.props.inputId+"').focus();
+		document.querySelector("#"+this.props.inputId).focus();
 	}
 	
 	clickLabel(){

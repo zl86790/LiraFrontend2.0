@@ -29,8 +29,6 @@ class IssueDetailPage extends React.Component {
 	}
 	
 	getIssueData(){
-		console.log("getissuedata")
-		console.log(this.refs);
 		var _this = this;
 		let url = Global.serverpath+'/api/v1/postlogin/issue';
    	 	axios.get(url, {
@@ -42,7 +40,6 @@ class IssueDetailPage extends React.Component {
 		    }
 		  })
 		  .then(function (response) {
-			  console.log(response);
 			  handleGETISSUEDATA.payload=response.data;
 			  store.dispatch(handleGETISSUEDATA);
 		  }).catch(function (error) {

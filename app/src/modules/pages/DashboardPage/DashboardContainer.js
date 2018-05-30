@@ -34,7 +34,6 @@ class DashboardContainer extends React.Component {
 		this.setState({
 			[key]:value
 		})
-		console.log(this.state);
 	}
 	
 	onSave = () => {

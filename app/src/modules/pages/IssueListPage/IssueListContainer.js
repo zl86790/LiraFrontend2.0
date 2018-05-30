@@ -47,7 +47,6 @@ class IssueListContainer extends React.Component {
 		this.setState({
 			[key]:value
 		})
-		console.log(this.state);
 	}
 	
 	onSave = () => {
@@ -156,7 +155,6 @@ class IssueListContainer extends React.Component {
 			  Header: 'Priority',
 			  accessor: 'priority'
 		  }];
-		  console.log(value);
 		return (
 				
 			<div>

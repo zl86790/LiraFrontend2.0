@@ -37,16 +37,13 @@ class IssueAddWatcher extends React.Component {
 		    }
 		  })
 		  .then(function (response) {
-			  console.log(response.data);
 			  var count = Boolean(response.data);
 			  if(count===true){
-				  console.log("goto true")
 				  _this.setState({
 			 			showStartWatching:'none',
 						showStopWatching:true
 				  });
 			  }else{
-				  console.log("goto false")
 				  _this.setState({
 			 			showStartWatching:true,
 						showStopWatching:'none'

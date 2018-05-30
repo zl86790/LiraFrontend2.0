@@ -18,10 +18,7 @@ class IssueDetailDetails extends React.Component {
 			issueTypeDisplay: true	
 		};  
 		this.showDetails = this.showDetails.bind(this);
-		this.clickIssueType = this.clickIssueType.bind(this);
-		this.blurIssueType = this.blurIssueType.bind(this);
-		this.blurIssueStatus = this.blurIssueStatus.bind(this);
-		this.blurIssuePriority = this.blurIssuePriority.bind(this);
+		
 		
 	}
 	
@@ -34,15 +31,13 @@ class IssueDetailDetails extends React.Component {
 			issueTypeDisplay:'none',
 			issueTypeEditDisplay:true
 		});
-		setTimeout(this.setFocus(),500)
-		console.log(this.props.value._data.type);
+		setTimeout(this.setFocus(),1)
 		this.refs.issueType.refs.issueType.value = this.props.value._data.type;
 		this.oldValueOfIssueType = this.props.value._data.type;
 	}
 	
 	blurIssueType(){
 		if(this.refs.issueType.refs.issueType.value!==this.oldValueOfIssueType){
-			console.log("changed");
 			var _this = this;
 			var typeValue = this.refs.issueType.refs.issueType.value;
 			axios.post(Global.serverpath+'/api/v1/postlogin/updateIssue', 
@@ -68,7 +63,6 @@ class IssueDetailDetails extends React.Component {
 		}
 	}
 	blurIssueStatus(){
-		console.log("call back for blur issue status");
 		var _this = this;
 		var value = this.refs.issueStatus.refs.issueStatus.value;
 		axios.post(Global.serverpath+'/api/v1/postlogin/updateIssue', 
@@ -94,7 +88,6 @@ class IssueDetailDetails extends React.Component {
 	}
 	
 	blurIssuePriority(){
-		console.log("call back for blur issue priority");
 		var _this = this;
 		var value = this.refs.issuePriority.refs.issuePriority.value;
 		axios.post(Global.serverpath+'/api/v1/postlogin/updateIssue', 

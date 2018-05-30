@@ -5,7 +5,6 @@ export const reducer = (state = {}, action) => {
     	 state.issueCounts = action.payload.issueCounts;
     	 state.pageNumber = action.payload.pageNumber;
     	 state._data = action.payload.data;
-    	 console.log(state);
     	 return state;
     default: return state;
   }

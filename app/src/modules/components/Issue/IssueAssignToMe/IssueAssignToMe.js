@@ -22,7 +22,6 @@ class IssueAssignToMe extends React.Component {
 	checkStatus(){
 		let url = Global.serverpath+'/api/v1/postlogin/assigneestatus';
 		var _this = this;
-		console.log(_this.props);
    	 	axios.get(url, {
 		    params: {
 		    	assignee_name:_this.props.assignee_name
@@ -34,13 +33,11 @@ class IssueAssignToMe extends React.Component {
 		  .then(function (response) {
 			  var count = Boolean(response.data);
 			  if(count===true){
-				  console.log("goto true")
 				  _this.setState({
 			 			showAssign:'none',
 						showDone:true
 					});
 			  }else{
-				  console.log("goto false")
 				  _this.setState({
 			 			showAssign:true,
 						showDone:'none'

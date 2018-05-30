@@ -48,7 +48,6 @@ const FetchUsers = createClass({
 		let project_id = undefined;
 		if(document.getElementById("project_id")!=null){
 			project_id = document.getElementById("project_id").value;
-			console.log(project_id);
 		}
 		if(project_id===undefined || this.props.project_id==null){
 			url = `${Global.serverpath}/api/v1/postlogin/usersStartWith?date=${now}&startWith=${input}`;
