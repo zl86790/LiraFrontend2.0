@@ -32,7 +32,7 @@ class LabelDatePicker extends React.Component {
 			showPicker:true,
 			dpvalue: moment(this.props.initValue)
 		  });
-	  setTimeout(this.setFocus(),1)
+	  setTimeout(this.setFocus,1)
   }
   
   blurPicker(){

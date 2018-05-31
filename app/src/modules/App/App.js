@@ -26,9 +26,9 @@ class App extends React.Component {
 
 		return (
 				<Provider store={store}>
+				<Router>
 				<div>
 					<div id="headerDiv">
-					<Router>
 					<Switch>
 						<Route exact path='/home' component={HeaderPrelogin}/>
 						<Route exact path='/Dashboard' component={Header}/>
@@ -38,10 +38,8 @@ class App extends React.Component {
 						<Route exact path='/IssueList' component={Header}/>
 						<Redirect from='' to="/home" />
 					</Switch>
-					</Router>
 					</div>
 					<div id="centerDiv" style={{padding:60}}>
-					<Router>
 					<Switch>
 						<Route exact path='/home' component={LoginPage}/>
 						<Route exact path='/Dashboard' component={DashboardPage}/>
@@ -51,10 +49,10 @@ class App extends React.Component {
 						<Route exact path='/IssueList' component={IssueListPage}/>
 						<Redirect from='' to="/home" />
 					</Switch>
-					</Router>
 					</div>
 					<div id="footerDiv"><Footer /></div>
 				</div>
+				</Router>
 				</Provider>
 		)
 	}

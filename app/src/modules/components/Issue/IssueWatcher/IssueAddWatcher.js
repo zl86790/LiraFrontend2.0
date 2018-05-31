@@ -20,10 +20,17 @@ class IssueAddWatcher extends React.Component {
 		this.load = this.load.bind(this);
 	}
 	
-	componentDidMount(){
-		this.load();
-	}
+	componentDidMount() {
+		this.isMountedDone = true;
+		if(this.props.loadByDb==="true"){
+			this.load();
+		}
+
+	};
 	
+	componentWillUnmount(){
+		this.isMountedDone = false;
+	}
 	
 	load() {
 		let url = Global.serverpath+'/api/v1/postlogin/watchstatus';
@@ -37,17 +44,19 @@ class IssueAddWatcher extends React.Component {
 		    }
 		  })
 		  .then(function (response) {
-			  var count = Boolean(response.data);
-			  if(count===true){
-				  _this.setState({
-			 			showStartWatching:'none',
-						showStopWatching:true
-				  });
-			  }else{
-				  _this.setState({
-			 			showStartWatching:true,
-						showStopWatching:'none'
-				  });
+			  if(_this.isMountedDone) {
+				  var count = Boolean(response.data);
+				  if(count===true){
+					  _this.setState({
+				 			showStartWatching:'none',
+							showStopWatching:true
+					  });
+				  }else{
+					  _this.setState({
+				 			showStartWatching:true,
+							showStopWatching:'none'
+					  });
+				  }
 			  }
 		  }).catch(function (error) {
 			alert("load error"+JSON.stringify(error));

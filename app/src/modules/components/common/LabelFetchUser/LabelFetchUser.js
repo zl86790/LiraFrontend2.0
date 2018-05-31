@@ -11,6 +11,7 @@ class LabelFetchUser extends React.Component {
 		this.onChange = this.onChange.bind(this);
 		this.gotoUser = this.gotoUser.bind(this);
 		this.getUsers = this.getUsers.bind(this);
+		this.setFocus = this.setFocus.bind(this);
 		this.state = {
 			showLabel:true,
 			showInput:'none'
@@ -23,8 +24,12 @@ class LabelFetchUser extends React.Component {
 			showLabel:'none',
 			showInput:true
 		});
-		setTimeout("document.querySelector('#"+this.props.fuId+"').focus()",1)
+		setTimeout(this.setFocus,1)
 	}
+	
+    setFocus(){
+    	  document.querySelector("#"+this.props.fuId).focus();
+      }
 	
 	blurInput(){
 		this.setState({

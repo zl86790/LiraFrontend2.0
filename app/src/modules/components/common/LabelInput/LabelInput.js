@@ -27,7 +27,7 @@ class LabelInput extends React.Component {
 		});
 		document.querySelector("#"+this.props.inputId).value = this.props.initValue;
 		this.oldValue = this.props.initValue;
-		setTimeout(this.setFocus(),1)
+		setTimeout(this.setFocus,1)
 	}
 	
 	blurInput(){

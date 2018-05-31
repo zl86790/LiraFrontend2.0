@@ -31,7 +31,7 @@ class IssueDetailDetails extends React.Component {
 			issueTypeDisplay:'none',
 			issueTypeEditDisplay:true
 		});
-		setTimeout(this.setFocus(),1)
+		setTimeout(this.setFocus,1)
 		this.refs.issueType.refs.issueType.value = this.props.value._data.type;
 		this.oldValueOfIssueType = this.props.value._data.type;
 	}

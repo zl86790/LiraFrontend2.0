@@ -15,12 +15,17 @@ class LabelSelect extends React.Component {
 		};  
 	}
 	
-	componentWillMount() {
+	componentDidMount() {
+		this.isMountedDone = true;
 		if(this.props.loadByDb==="true"){
 			this.loadData();
 		}
 
 	};
+	
+	componentWillUnmount(){
+		this.isMountedDone = false;
+	}
 	
 	loadData(){
 		let url = Global.serverpath+'/api/v1/postlogin/sysparameters';
@@ -35,9 +40,11 @@ class LabelSelect extends React.Component {
 		    }
 		  })
 		  .then(function (response) {
-			  _this.setState({
-				  options: response.data
-				});
+			  if(_this.isMountedDone) {
+				  _this.setState({
+					  options: response.data
+				  });
+			  }
 		  }).catch(function (error) {
 			alert("load error"+JSON.stringify(error));
 		  });
