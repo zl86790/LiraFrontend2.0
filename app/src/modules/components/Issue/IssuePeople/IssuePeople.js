@@ -75,10 +75,10 @@ class IssuePeople extends React.Component {
 				<div style={{clear:'both'}} ></div>
 				<div>
 					<Collapse isOpened={openPeople}>
-						<div style={{}}>
-					  		<div>Assignee: <LabelFetchUser initValue={value._data.assignee_name} fuId="assigneeFetcher" issue_id={this.props.issue_id} ref="assigneeFetcher" callBackFunction={this.changeAssignee}/></div>
-					  		<div><IssueAssignToMe issue_id={this.props.issue_id} refreshData={this.props.refreshData} assignee_name={value._data.assignee_name}/></div>
-					  		<div>Reporter: <LabelFetchUser initValue={value._data.reporter_name} fuId="reporterFetcher" issue_id={this.props.issue_id} ref="reporterFetcher" callBackFunction={this.changeReporter}/></div>
+						<div style={{}} className="container">
+					  		<div className="row">Assignee: <LabelFetchUser initValue={value._data.assignee_name} fuId="assigneeFetcher" issue_id={this.props.issue_id} ref="assigneeFetcher" callBackFunction={this.changeAssignee}/></div>
+					  		<div className="row"><IssueAssignToMe issue_id={this.props.issue_id} refreshData={this.props.refreshData} assignee_name={value._data.assignee_name}/></div>
+					  		<div className="row">Reporter: <LabelFetchUser initValue={value._data.reporter_name} fuId="reporterFetcher" issue_id={this.props.issue_id} ref="reporterFetcher" callBackFunction={this.changeReporter}/></div>
 					  	</div>
 					</Collapse>
 				</div>

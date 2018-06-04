@@ -100,10 +100,10 @@ class IssueDates extends React.Component {
 				<div style={{clear:'both'}} ></div>
 				<div>
 					<Collapse isOpened={openIssueDates}>
-						<div style={{}}>
-					  		<div>Created: <LabelDatePicker initValue={value._data.created_time_formatted} pickerId="created_time" pickerName="created_time" ref="created_time" pickerRef="created_time" callBackFunction={this.changeCreatedTime}/></div>
-					  		<div>Updated: <LabelDatePicker initValue={value._data.updated_time_formatted} pickerId="updateDate" pickerName="updateDate" ref="updateDate" pickerRef="updateDate" callBackFunction={this.changeUpdateDate}/></div>
-					  		<div>Resolved: <LabelDatePicker initValue={value._data.resolved_time_formatted} pickerId="resolved_time" pickerName="resolved_time" ref="resolved_time" pickerRef="resolved_time" callBackFunction={this.changeResolvedTime}/></div>
+						<div style={{}} className="container">
+					  		<div className="row">Created: <LabelDatePicker initValue={value._data.created_time_formatted} pickerId="created_time" pickerName="created_time" ref="created_time" pickerRef="created_time" callBackFunction={this.changeCreatedTime}/></div>
+					  		<div className="row">Updated: <LabelDatePicker initValue={value._data.updated_time_formatted} pickerId="updateDate" pickerName="updateDate" ref="updateDate" pickerRef="updateDate" callBackFunction={this.changeUpdateDate}/></div>
+					  		<div className="row">Resolved: <LabelDatePicker initValue={value._data.resolved_time_formatted} pickerId="resolved_time" pickerName="resolved_time" ref="resolved_time" pickerRef="resolved_time" callBackFunction={this.changeResolvedTime}/></div>
 					  	</div>
 					</Collapse>
 				</div>
