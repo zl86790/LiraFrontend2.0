@@ -1,6 +1,3 @@
-/**
- * 
- */
 import React from 'react';
 import Collapse from 'react-collapse';
 import './IssueDates.css';

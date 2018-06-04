@@ -31,7 +31,6 @@ class AssignedToMe extends React.Component {
 	
 	fetchData(pageNumber){
 		let url = Global.serverpath+'/api/v1/postlogin/issues';
-		let _this = this;
    	 	axios.get(url, {
 		    params: {
 		      pageNumber:pageNumber,
@@ -41,10 +40,10 @@ class AssignedToMe extends React.Component {
 		      "lira_token": Global.getCookie('lira_token')
 		    }
 		  })
-		  .then(function (response) {
+		  .then(response => {
 			  handleGETDATA.payload.data=response.data;
 			  handleGETDATA.payload.pageNumber = pageNumber;
-			  _this.getIssueCounts()
+			  this.getIssueCounts()
 		  }).catch(function (error) {
 			alert("load error");
 		  });

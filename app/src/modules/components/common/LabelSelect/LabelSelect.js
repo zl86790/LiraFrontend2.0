@@ -29,7 +29,6 @@ class LabelSelect extends React.Component {
 	
 	loadData(){
 		let url = Global.serverpath+'/api/v1/postlogin/sysparameters';
-		let _this = this;
 	 	axios.get(url, {
 		    params: {
 		      module_key:this.props.module_key,
@@ -39,9 +38,9 @@ class LabelSelect extends React.Component {
 		      "lira_token": Global.getCookie('lira_token')
 		    }
 		  })
-		  .then(function (response) {
-			  if(_this.isMountedDone) {
-				  _this.setState({
+		  .then(response => {
+			  if(this.isMountedDone) {
+				  this.setState({
 					  options: response.data
 				  });
 			  }

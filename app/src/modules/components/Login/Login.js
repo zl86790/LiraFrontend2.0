@@ -6,7 +6,6 @@ import Global from '../Global/Global.js';
 import $ from "jquery";
 class LoginDiv extends React.Component {
 	login(event) {
-		var _this = this;
 		var userName = this.refs.userName.value;
 		var passWord = this.refs.passWord.value;
 		var user = {userName:userName,passWord:passWord}
@@ -16,10 +15,10 @@ class LoginDiv extends React.Component {
 		    data: JSON.stringify(user), 
 		    dataType: 'json',
 		    contentType: 'application/json',
-		    success: function(data){ 
+		    success: data => { 
 		    	alert(JSON.stringify(data));
 		    	Global.setCookie("lira_token",data.lira_token,1);
-		    	_this.props.history.push('/Dashboard');
+		    	this.props.history.push('/Dashboard');
 		    },
 			error: function(data){ 
 		    	alert("login error");

@@ -7,20 +7,20 @@ class DbSelect extends React.Component {
 		super(props);
 		this.generateOptions = this.generateOptions.bind(this);
 		this.loadData = this.loadData.bind(this);
-		this.state = {
-		}
 	}
 	
 	componentWillMount() {
 		if(this.props.loadByDb==="true"){
 			this.loadData();
 		}
-
+		const ops = this.generateOptions();
+		this.setState({
+			ops:ops
+		})
 	};
 	
 	loadData(){
 		let url = Global.serverpath+'/api/v1/postlogin/sysparameters';
-		let _this = this;
 	 	axios.get(url, {
 		    params: {
 		      module_key:this.props.module_key,
@@ -30,8 +30,8 @@ class DbSelect extends React.Component {
 		      "lira_token": Global.getCookie('lira_token')
 		    }
 		  })
-		  .then(function (response) {
-			  _this.setState({
+		  .then(response=>{
+			  this.setState({
 				  options: response.data
 				});
 		  }).catch(function (error) {
@@ -46,7 +46,9 @@ class DbSelect extends React.Component {
 				});
         }
         let options = [];
-        if(this.props.loadByDb==="true"){
+        if(this.state.options===undefined){
+        	options = [];
+        }else if(this.props.loadByDb==="true"){
         	options = this.state.options.length === 0 ? [] : this.state.options;
         }else{
         	options = this.props.options.length === 0 ? [] : this.props.options;
@@ -65,14 +67,14 @@ class DbSelect extends React.Component {
     
     render() {
     	
-    	const ops = this.generateOptions();
+    	
     
 		return (
 				<div className="lira-detail-content">
 	  				<div style={{display:this.state.selectDisplay}}>{this.props.initValue}</div>
 	  				<div style={{display:this.state.selectEditDisplay}}>
 		  				<select id={this.props.selectId} name={this.props.selectName} className="form-control" required ref={this.props.selectRef} style={{width:100}} onChange={(e)=>this.props.onChangeCallBack(e.target)}>
-		  					{ops}
+		  					{this.state.ops}
 			          	</select>
 	  				</div>
 	  			</div>

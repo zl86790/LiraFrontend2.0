@@ -5,12 +5,13 @@ import axios from 'axios';
 import { withRouter } from "react-router-dom";
 
 class IssueAssignToMe extends React.Component {
+	state = {
+		showAssign:true,
+		showDone:'none'
+	}; 
+
 	constructor(props) {
 		super(props);
-		this.state = {
-				showAssign:true,
-				showDone:'none'
-		}; 
 		this.assign2me = this.assign2me.bind(this);
 		this.checkStatus = this.checkStatus.bind(this);
 	}
